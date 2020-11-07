@@ -5,7 +5,7 @@ import alias from '@rollup/plugin-alias'
 import replace from '@rollup/plugin-replace'
 
 // https://github.com/TrySound/rollup-plugin-terser
-import { terser } from "rollup-plugin-terser";
+import { terser } from 'rollup-plugin-terser'
 
 // https://github.com/saf33r/rollup-plugin-cleaner
 import cleaner from 'rollup-plugin-cleaner'
@@ -18,7 +18,10 @@ import pkg from './package.json'
 import { cloneDeep, upperFirst } from 'lodash'
 const path = require('path')
 
-const filename = pkg.browser.slice(pkg.browser.indexOf('/') + 1, pkg.browser.indexOf('.'))
+const filename = pkg.browser.slice(
+  pkg.browser.indexOf('/') + 1,
+  pkg.browser.indexOf('.')
+)
 
 const out = [
   {
@@ -32,17 +35,19 @@ const out = [
   {
     file: pkg.browser,
     format: 'umd',
-    name: upperFirst(filename)
+    name: filename
+      .split('-')
+      .map((i) => upperFirst(i))
+      .join('')
   }
 ]
 
-const banner =
-  `/*!
+const banner = `/*!
  * ${pkg.name} v${pkg.version}
  * (c) 2020-2021 ${pkg.author}
  * Released under the ${pkg.license} License.
  */
-`;
+`
 
 const minimize = (obj) => {
   const minObj = cloneDeep(obj)
@@ -59,23 +64,20 @@ const resolve = (dir) => {
 export default {
   input: resolve('src/index.js'),
   output: [
-    ...out, ...out.map(type => {
+    ...out,
+    ...out.map((type) => {
       type.file = resolve(type.file)
       return minimize(type)
     })
   ],
   plugins: [
     cleaner({
-      targets: [
-        './dist'
-      ]
+      targets: ['./dist']
     }),
     nodeResolve(),
     commonjs(),
     alias({
-      entries: [
-        { find: '@', replacement: resolve('src') },
-      ]
+      entries: [{ find: '@', replacement: resolve('src') }]
     }),
     replace({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
@@ -85,7 +87,10 @@ export default {
       babelHelpers: 'runtime'
     }),
     postcss({
-      extract: process.env.CSS_STATUS === 'inline' ? false : resolve(`dist/css/${filename}.css`)
+      extract:
+        process.env.CSS_STATUS === 'inline'
+          ? false
+          : resolve(`dist/css/${filename}.css`)
     })
   ]
-};
+}
