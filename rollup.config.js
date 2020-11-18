@@ -57,7 +57,14 @@ const banner = `/*!
 const minimize = (obj) => {
   const minObj = cloneDeep(obj)
   minObj.file = minObj.file.slice(0, minObj.file.lastIndexOf('.js')) + '.min.js'
-  minObj.plugins = [terser({ compress: { drop_console: true } })]
+  minObj.plugins = [
+    terser({
+      compress: { drop_console: true },
+      format: {
+        comments: RegExp(`${pkg.name}`)
+      }
+    })
+  ]
   minObj.banner = banner
   return minObj
 }
