@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import babel from '@rollup/plugin-babel'
 import alias from '@rollup/plugin-alias'
 import replace from '@rollup/plugin-replace'
+import json from '@rollup/plugin-json'
 
 // https://github.com/TrySound/rollup-plugin-terser
 import { terser } from 'rollup-plugin-terser'
@@ -78,6 +79,7 @@ export default {
     cleaner({
       targets: ['./dist']
     }),
+    json(),
     nodeResolve(),
     commonjs(),
     alias({
