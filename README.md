@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src = 'https://cdn.jsdelivr.net/gh/fz6m/Private-picgo@moe/img/20201122042521.jpg' width = '210px' />
+<img src = 'https://cdn.jsdelivr.net/gh/fz6m/Private-picgo@moe/img/20201122042521.jpg' width = '200px' />
 
 # rollup-utils-template
 
