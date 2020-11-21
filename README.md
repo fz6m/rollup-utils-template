@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src = 'https://cdn.jsdelivr.net/gh/fz6m/Private-picgo@moe/img/20201122042521.jpg' width = '200px' />
+<img src = 'https://cdn.jsdelivr.net/gh/fz6m/Private-picgo@moe/img/20201122042521.jpg' width = '210px' />
 
 # rollup-utils-template
 
@@ -10,13 +10,12 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![License](https://img.shields.io/github/license/fz6m/rollup-utils-template)
 
+使用 rollup 构建工具或功能库的起始模板，代码格式规范化，即开即用快速发布，节省初始配置构建环境的时间
+
+*JavaScript* | *[TypeScript](https://github.com/fz6m/rollup-utils-template/tree/typescript)*
+
 </div>
 
-一个使用 rollup 构建工具或功能库的起始模板，代码格式规范化，即开即用快速发布，节省初始配置构建环境的时间。
-
-*version: JavaScript*
-
-*version: [TypeScript](https://github.com/fz6m/rollup-utils-template/tree/typescript)*
 
 ### 使用
 
