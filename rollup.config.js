@@ -19,6 +19,8 @@ import pkg from './package.json'
 import { cloneDeep, upperFirst } from 'lodash'
 const path = require('path')
 
+const isDev = process.env.NODE_ENV === 'development'
+
 const filename = pkg.browser.slice(
   pkg.browser.indexOf('/') + 1,
   pkg.browser.indexOf('.')
@@ -55,7 +57,7 @@ const minimize = (obj) => {
   minObj.file = minObj.file.slice(0, minObj.file.lastIndexOf('.js')) + '.min.js'
   minObj.plugins = [
     terser({
-      compress: { drop_console: true },
+      compress: { drop_console: !isDev },
       format: {
         comments: RegExp(`${pkg.name}`)
       }
