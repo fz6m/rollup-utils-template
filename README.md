@@ -93,7 +93,14 @@ esm|name.esm.min.js
 :-:|:-
 `postcss.config.js`| Postcss 的配置文件，提供 autoprefixer 与 cssnano 的支持
 `babel.config.json`| Babel 的配置文件，提供沙箱式 polyfill 
+`commitlint.config.js`| git commit 提交规范配置
 `.browserslistrc`| 指定浏览器兼容目标的版本信息
+`.editorconfig`| 工作区文件格式配置
+`.eslintrc.js`| eslint 配置
+`.eslintignore`| eslint 忽略配置
+`.huskyrc.json`| git hooks 钩子配置
+`.prettierrc`| 代码规范配置
+`.stylelintrc.json`| css 规范配置
 
 ### 其他
 
