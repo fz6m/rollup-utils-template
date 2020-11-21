@@ -1,20 +1,23 @@
 # rollup-utils-template
 
+一个用 rollup 构建 工具或功能库 的起始模板，节省初始配置构建环境的时间。
+
 *version: JavaScript*
 
 *version: [TypeScript](https://github.com/fz6m/rollup-utils-template/tree/typescript)*
-
-一个用 rollup 构建 工具或功能库 的起始模板，节省初始配置构建环境的时间。
 
 ### 使用
 
 在 src/index.js 入口处进行管理。
 
 ```bash
-    # 常规构建， css 会被抽取至 dist/css 下
+    # 开发构建
+    yarn dev
+
+    # 常规构建： css 会被抽取至 dist/css 下
     yarn build
 
-    # 内联构建， css 会被内联自动注入页面 <head>
+    # 内联构建： css 会被内联自动注入页面 <head>
     yarn build:inline
 ```
 
@@ -40,8 +43,10 @@ esm|name.esm.min.js
 `main`| cjs 版本打包后的文件名
 `browser`| umd 版本打包后的文件名
 `module`| esm 版本打包后的文件名
+`unpkg`| unpkg cdn 默认加载文件
 `homepage` | 库源码主页地址
 `author`| 作者信息
+`repository`| 仓库地址
 `keywords`| 关键词
 `files`| 使用时哪些文件夹会被下载
 `license`| 协议
@@ -61,6 +66,7 @@ esm|name.esm.min.js
 `@rollup/plugin-alias`|官方|提供在路径中使用别名的功能
 `@rollup/plugin-node-resolve`|官方|提供打包引入库的功能
 `@rollup/plugin-commonjs`|官方|提供将其他模块转换为 cjs 导入的功能
+`@rollup/plugin-json`|官方|提供导入 json 文件功能
 
 #### Babel
 
