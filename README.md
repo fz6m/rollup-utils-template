@@ -1,6 +1,20 @@
+<div align="center">
+
+<img src = 'https://cdn.jsdelivr.net/gh/fz6m/Private-picgo@moe/img/20201122035546.jpg' width = '150px' />
+
 # rollup-utils-template
 
-一个用 rollup 构建 工具或功能库 的起始模板，节省初始配置构建环境的时间。
+![Rollop](https://img.shields.io/badge/rollop-2.3-ec4a3f)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![Version](https://img.shields.io/badge/version-1.2-orange)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![License](https://img.shields.io/github/license/fz6m/rollup-utils-template)
+
+</div>
+
+----
+
+一个使用 rollup 构建工具或功能库的起始模板，代码格式规范化，即开即用快速发布，节省初始配置构建环境的时间。
 
 *version: JavaScript*
 
@@ -8,7 +22,7 @@
 
 ### 使用
 
-在 src/index.js 入口处进行管理。
+在 `src/index.js` 入口处进行管理。
 
 ```bash
     # 开发构建
@@ -101,6 +115,14 @@ esm|name.esm.min.js
 `.huskyrc.json`| git hooks 钩子配置
 `.prettierrc`| 代码规范配置
 `.stylelintrc.json`| css 规范配置
+
+### 规范化
+
+ * `commitlint` : git commit 信息规范化
+
+ * `eslint` / `prettier` : 代码风格统一
+
+ * `stylelint` : css 格式规范化
 
 ### 其他
 
