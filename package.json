@@ -23,7 +23,7 @@
     "build:inline": "cross-env NODE_ENV=production CSS_STATUS=inline rollup -c",
     "lint": "eslint --ext .js \"src\"",
     "lint:style": "stylelint \"src/*.{css,scss}\"",
-    "prettier": "prettier -c --write \"src/*.js\"",
+    "prettier": "prettier -c --write \"src/**/*.js\"",
     "fix": "eslint --fix --ext .js \"src\"",
     "fix:style": "stylelint --fix \"src/*.{css,scss}\""
   },
