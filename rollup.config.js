@@ -72,7 +72,6 @@ const configGenerator = (module, index) => ({
       exclude: 'node_modules/**'
     }),
     postcss({
-      modules: true,
       extract:
         process.env.CSS_STATUS === 'inline'
           ? false
