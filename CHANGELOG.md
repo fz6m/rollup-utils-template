@@ -1,4 +1,12 @@
-# 1.3.0 (2021-01-08)
+# [1.8.0](https://github.com/compare/v1.7.0...v1.8.0) (2021-01-08)
+
+
+
+# [1.7.0](https://github.com/compare/v1.5.0...v1.7.0) (2021-01-08)
+
+
+
+# [1.5.0](https://github.com/compare/e8d2ba3091e2eb8ae9a1567f83dcc6b33286d5c1...v1.5.0) (2021-01-08)
 
 
 ### Features

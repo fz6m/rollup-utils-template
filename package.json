@@ -1,14 +1,14 @@
 {
   "name": "rollup-utils-template",
   "version": "1.8.0",
+  "author": "",
+  "description": "",
   "main": "dist/bundle.cjs.js",
   "browser": "dist/bundle.js",
   "module": "dist/bundle.esm.js",
   "unpkg": "dist/bundle.min.js",
   "jsdelivr": "dist/bundle.min.js",
   "homepage": "https://github.com",
-  "description": "",
-  "author": "",
   "repository": {
     "type": "git",
     "url": "https://github.com"
@@ -22,6 +22,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development rollup -c -w",
     "build": "cross-env NODE_ENV=production rollup -c",
+    "build:dev": "cross-env NODE_ENV=development rollup -c",
     "build:inline": "cross-env NODE_ENV=production CSS_STATUS=inline rollup -c",
     "lint": "eslint --ext .js,.jsx \"src\"",
     "lint:style": "stylelint \"src/**/*.{css,scss,less}\"",

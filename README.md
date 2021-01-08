@@ -19,108 +19,122 @@
 
 ### 使用
 
-在 `src/index.js` 入口处进行管理。
+在 `src/index.{js,jsx}` 入口处进行管理。
+
+**开发**
 
 ```bash
-    # 开发构建
-    yarn dev
-
-    # 常规构建： css 会被抽取至 dist/css 下
-    yarn build
-
-    # 内联构建： css 会被内联自动注入页面 <head>
-    yarn build:inline
+  yarn dev
 ```
 
-最终将会构建至 `./dist` 下：
+**构建**
+
+```bash
+  # 常规构建： css 会被抽取至 dist/css 下
+  yarn build
+
+  # 开发构建
+  yarn build:dev
+
+  # 内联构建： css 会被内联自动注入页面 <head>
+  yarn build:inline
+```
+
+构建产物将生成至 `./dist` 下：
 
 类型|文件名
 :-:|:-:
 cjs|name.cjs.js
 cjs|name.cjs.min.js
-umd|name.umd.js
-umd|name.umd.min.js
+umd|name.js
+umd|name.min.js
 esm|name.esm.js
 esm|name.esm.min.js
 
 ### 发布
 
-发布时，你只需自定义 `package.json` 的以下信息：
+发布时，根据需要自定义 `package.json` 的以下信息：
 
 属性|说明
 :-:|:-
 `name`| 库的名称
 `version`| 库的版本号，统一采用三位
+`author`| 作者信息
+`description`| 仓库说明
 `main`| cjs 版本打包后的文件名
 `browser`| umd 版本打包后的文件名
 `module`| esm 版本打包后的文件名
 `unpkg`| unpkg cdn 默认加载文件
+`jsdelivr` | jsdelivr cdn 默认加载文件
 `homepage` | 库源码主页地址
-`author`| 作者信息
 `repository`| 仓库地址
 `keywords`| 关键词
 `files`| 使用时哪些文件夹会被下载
 `license`| 协议
 
+之后执行预发布
+
+```bash
+  # 更新版本号并生成 CHANGELOG
+  yarn pre-publish
+```
+
+最后 `git add .` 提交工作区完成最后一次 `commit` 与 `push` 即可
+
 ### 功能
 
-#### Rollup
+本初始模板已集成以下功能：
 
-本初始模板已配置以下 rollup 功能：
-
-插件名|来源|说明
+功能|类型|说明
 :-:|:-:|:-
-`rollup-plugin-cleaner`|社区|每次 build 前清除上一次的构建目录
-`rollup-plugin-terser`|社区|采用 Terser 压缩 JavaScript
-`rollup-plugin-postcss`|社区|采用 Postcss 处理 css
-`@rollup/plugin-replace`|官方|自动替换文件中的环境变量
-`@rollup/plugin-alias`|官方|提供在路径中使用别名的功能
-`@rollup/plugin-node-resolve`|官方|提供打包引入库的功能
-`@rollup/plugin-commonjs`|官方|提供将其他模块转换为 cjs 导入的功能
-`@rollup/plugin-json`|官方|提供导入 json 文件功能
+`terser`|js|采用 terser 压缩 javascript
+`jsx-runtime`|js|提供 jsx 语法使用支持
+`node-sass`|css|支持使用 scss 语法
+`less`|css|支持使用 less 语法
+`emotion`|css|支持使用 style component
+`postcss`|css|支持使用 css module
+`postcss`|css|采用 postcss 处理 css
+`autoprefixer`|css|提供 css 跨浏览器前缀兼容
+`cssnano`|css|提供 css 压缩、优化功能
+`alias`|build|支持在路径中采用 `@` 形式的别名
+`cleaner`|build|每次 build 前清除上一次的构建目录
+`replace`|build|支持自定义环境变量
+`commonjs`|build|提供将其他模块统一转换为 `cjs` 导入的功能
+`node-resolve`|build|对于 `cjs` 与 `umd` 提供打包第三方依赖功能
+`json`|build|提供导入 json 文件功能
 
-#### Babel
-
-依赖名|说明
-:-:|:-
-`@babel/core`|Babel 核心依赖
-`@babel/preset-env`|Babel 默认预设
-`@babel/runtime`|Babel helper 辅助函数依赖
-`@babel/runtime-corejs3`|Babel polyfill 填充库
-`@babel/plugin-transform-runtime`|对 Babel 各依赖联动管理
-
-#### CSS Preprocessor
-
-依赖名|说明
-:-:|:-
-`autoprefixer`| 提供 CSS 前缀兼容的功能
-`cssnano`| 提供 CSS 压缩、优化等功能
-`cssnano-preset-default` | cssnano 默认预设
-`node-sass`|提供 sass 编译能力
 
 ### 配置
 
 文件名|说明
 :-:|:-
-`postcss.config.js`| Postcss 的配置文件，提供 autoprefixer 与 cssnano 的支持
-`babel.config.json`| Babel 的配置文件，提供沙箱式 polyfill 
-`commitlint.config.js`| git commit 提交规范配置
-`.browserslistrc`| 指定浏览器兼容目标的版本信息
+`postcss.config.js`| postcss 的配置文件，提供 autoprefixer 与 cssnano 支持
+`babel.config.js`| babel 配置文件
+`commitlint.config.js`| git commit 提交规范
+`.browserslistrc`| 指定浏览器兼容的目标版本
+`jsconfig.json`| 工作区文件智能识别配置
 `.editorconfig`| 工作区文件格式配置
 `.eslintrc.js`| eslint 配置
 `.eslintignore`| eslint 忽略配置
 `.huskyrc.json`| git hooks 钩子配置
 `.prettierrc`| 代码规范配置
 `.stylelintrc.json`| css 规范配置
+`rollup.config.js`| rollup 打包配置
 
 ### 规范化
 
- * `commitlint` : git commit 信息规范化
+功能|说明
+:-:|:-
+`commitlint`| git commit 信息规范化
+`eslint` / `prettier`| 代码风格统一化
+`stylelint`| css 格式规范化
+`standard-version`| 版本号智能化
+`lint-staged`| 缓冲区代码规范化
+`conventional-changelog`| 变动日志规范化
 
- * `eslint` / `prettier` : 代码风格统一
-
- * `stylelint` : css 格式规范化
 
 ### 其他
 
 实际使用中，你可能需要进一步深入配置 `rollup.config.js` ，比如打包的 `banner` 信息等。
+
+注：在开发库时不建议使用 `>=es6` 的高阶方法，因为 polyfill 会极大增大包的体积。
