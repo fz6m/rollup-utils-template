@@ -1,6 +1,6 @@
 {
   "name": "rollup-utils-template",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "main": "dist/bundle.cjs.js",
   "browser": "dist/bundle.js",
   "module": "dist/bundle.esm.js",
@@ -32,7 +32,7 @@
     "release-as": "standard-version",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "changelog-all": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "pre-publish": "yarn release && yarn changelog"
+    "pre-publish": "yarn release && yarn changelog-all"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
