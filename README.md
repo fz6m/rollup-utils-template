@@ -6,7 +6,7 @@
 
 ![Rollop](https://img.shields.io/badge/rollop-2.3-ec4a3f)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Version](https://img.shields.io/badge/version-1.2-orange)
+![Version](https://img.shields.io/badge/version-1.9-orange)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![License](https://img.shields.io/github/license/fz6m/rollup-utils-template)
 
