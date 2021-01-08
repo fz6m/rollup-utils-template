@@ -1,3 +1,12 @@
+# [1.10.0](https://github.com/compare/v1.9.0...v1.10.0) (2021-01-08)
+
+
+### Bug Fixes
+
+* remove css random classname 🌽 ([0d7874f](https://github.com/commit/0d7874f30ba335c5eb2960749d003e87c177753e))
+
+
+
 # [1.9.0](https://github.com/compare/v1.8.0...v1.9.0) (2021-01-08)
 
 
