@@ -1,6 +1,6 @@
 {
   "name": "rollup-utils-template",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "main": "dist/bundle.cjs.js",
   "browser": "dist/bundle.umd.js",
   "module": "dist/bundle.esm.js",
@@ -25,7 +25,12 @@
     "lint:style": "stylelint \"src/**/*.{css,scss,less}\"",
     "prettier": "prettier -c --write \"src/**/*.{js,jsx}\"",
     "fix": "eslint --fix --ext .js,.jsx \"src\"",
-    "fix:style": "stylelint --fix \"src/**/*.{css,scss,less}\""
+    "fix:style": "stylelint --fix \"src/**/*.{css,scss,less}\"",
+    "release": "standard-version --release-as minor",
+    "release-as": "standard-version",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "changelog-all": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "prepublish": "yarn release && yarn changelog"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -41,6 +46,7 @@
     "@rollup/plugin-node-resolve": "^11.0.1",
     "@rollup/plugin-replace": "^2.3.4",
     "autoprefixer": "^9.8.6",
+    "conventional-changelog-cli": "^2.1.1",
     "cross-env": "^7.0.3",
     "cssnano": "^4.1.10",
     "cssnano-preset-default": "^4.0.7",
@@ -63,9 +69,16 @@
   },
   "dependencies": {
     "@emotion/react": "^11.1.4",
-    "@emotion/styled": "^11.0.0",
+    "@emotion/styled": "^11.0.0"
+  },
+  "peerDependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
+  },
+  "standard-version": {
+    "skip": {
+      "changelog": true
+    }
   },
   "license": "MIT"
 }
