@@ -6,7 +6,7 @@
 
 ![Rollop](https://img.shields.io/badge/rollop-2.3-ec4a3f)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Version](https://img.shields.io/badge/version-1.11-orange)
+![Version](https://img.shields.io/badge/version-1.12-orange)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![License](https://img.shields.io/github/license/fz6m/rollup-utils-template)
 
@@ -72,14 +72,12 @@ esm|name.esm.min.js
 `files`| 使用时哪些文件夹会被下载
 `license`| 协议
 
-之后执行预发布
+之后书写 `README.md` 文档，再执行自动化发布
 
 ```bash
-  # 更新版本号并生成 CHANGELOG
-  yarn pre-publish
+  # 更新版本号 -> 构建产物 -> 生成 CHANGELOG -> 自动提交 -> 决定是否发布到 NPM
+  yarn all
 ```
-
-最后 `git add .` 提交工作区完成最后一次 `commit` 与 `push` 即可
 
 ### 功能
 
