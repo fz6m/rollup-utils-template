@@ -81,7 +81,7 @@ const publish = async () => {
 
   print('[Publish] ready to push to remote git repo', color.success)
 
-  process.exitCode = 1
+  return
 }
 
 publish()
