@@ -1,3 +1,35 @@
+## [1.12.2](https://github.com/compare/v1.12.1...v1.12.2) (2021-01-09)
+
+
+
+## [1.12.1](https://github.com/compare/v1.12.0...v1.12.1) (2021-01-09)
+
+
+
+# [1.12.0](https://github.com/compare/v1.11.5...v1.12.0) (2021-01-09)
+
+
+
+## [1.11.5](https://github.com/compare/v1.11.4...v1.11.5) (2021-01-09)
+
+
+
+## [1.11.4](https://github.com/compare/v1.11.3...v1.11.4) (2021-01-09)
+
+
+
+## [1.11.3](https://github.com/compare/v1.11.2...v1.11.3) (2021-01-09)
+
+
+
+## [1.11.2](https://github.com/compare/v1.11.1...v1.11.2) (2021-01-09)
+
+
+
+## [1.11.1](https://github.com/compare/v1.11.0...v1.11.1) (2021-01-09)
+
+
+
 # [1.11.0](https://github.com/compare/v1.10.0...v1.11.0) (2021-01-09)
 
 

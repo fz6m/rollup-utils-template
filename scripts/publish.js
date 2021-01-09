@@ -45,7 +45,7 @@ const publish = async () => {
     color.changelog
   )
 
-  await execa('yarn', 'changelog-all')
+  await execa('yarn changelog-all')
 
   print(
     `[Publish: changelog] ---------- changelog generated ----------`,
