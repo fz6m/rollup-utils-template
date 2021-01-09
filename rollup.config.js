@@ -20,7 +20,7 @@ import typescript from 'rollup-plugin-typescript2'
 import pkg from './package.json'
 
 // support .js .jsx
-// import { DEFAULT_EXTENSIONS } from '@babel/core'
+import { DEFAULT_EXTENSIONS } from '@babel/core'
 
 const path = require('path')
 const fs = require('fs')
@@ -82,7 +82,7 @@ const configGenerator = (module, index) => ({
     }),
     babel({
       exclude: 'node_modules/**',
-      extensions: ['.ts', '.tsx']
+      extensions: [...DEFAULT_EXTENSIONS, '.ts', '.tsx']
     }),
     postcss({
       extract:
