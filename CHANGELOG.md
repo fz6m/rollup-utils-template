@@ -1,3 +1,7 @@
+# [1.4.0](https://github.com/compare/v1.3.0...v1.4.0) (2021-01-09)
+
+
+
 # [1.3.0](https://github.com/compare/f7d6c639cfa6da41c6d102957a8e5660a1bad6b5...v1.3.0) (2021-01-09)
 
 
