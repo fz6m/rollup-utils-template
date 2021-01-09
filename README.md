@@ -6,7 +6,7 @@
 
 ![Rollop](https://img.shields.io/badge/rollop-2.3-ec4a3f)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Version](https://img.shields.io/badge/version-1.10-orange)
+![Version](https://img.shields.io/badge/version-1.11-orange)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![License](https://img.shields.io/github/license/fz6m/rollup-utils-template)
 
@@ -62,8 +62,8 @@ esm|name.esm.min.js
 `author`| 作者信息
 `description`| 仓库说明
 `main`| cjs 版本打包后的文件名
-`browser`| umd 版本打包后的文件名
 `module`| esm 版本打包后的文件名
+`umd:main`| umd 版本打包后的文件名
 `unpkg`| unpkg cdn 默认加载文件
 `jsdelivr` | jsdelivr cdn 默认加载文件
 `homepage` | 库源码主页地址
