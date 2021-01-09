@@ -1,6 +1,6 @@
 {
   "name": "rollup-utils-template-ts",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "author": "",
   "description": "",
   "main": "dist/bundle.cjs.js",
