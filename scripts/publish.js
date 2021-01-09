@@ -69,7 +69,7 @@ const publish = async () => {
   )
 
   // 决定是否发布到 npm
-  const toNPM = await select(['yes', 'no'], 'Publish to NPM ?', color.main)
+  const toNPM = await select(['no', 'yes'], 'Publish to NPM ?', color.main)
 
   if (toNPM === 'yes') {
     print(`[Publish: npm] ---------- publish npm start ----------`, color.npm)
@@ -79,7 +79,7 @@ const publish = async () => {
 
   print(`[Publish] ---------- publish end ----------`, color.main)
 
-  print('[Publish] ready to push to remote git repo', color.success)
+  print('[Publish] ready push to remote git repo', color.success)
 
   return
 }
