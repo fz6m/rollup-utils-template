@@ -4,33 +4,82 @@ const execa = require('execa')
 
 const stdio = { stdio: 'inherit' }
 
+const color = {
+  main: '#b8f1ed', // 杏仁饼海洋蓝
+  release: '#fd803a', // 马卡龙玫瑰果
+  build: '#f1b8f1', // 马卡龙粉
+  changelog: '#ffe647', // 马卡龙可可凤梨
+  commit: '#cf8878', // 杏仁饼，果仁糖，巧克力
+  npm: '#f1707d', // 马卡龙草莓奶霜
+  success: '#ff4500' // 橙红色
+}
+
 const publish = async () => {
-  print('[Publish] ---------- publish start ---------- ')
+  print('[Publish] ---------- publish start ---------- ', color.main)
 
-  const versionType = await select(['patch', 'minor', 'major'])
+  // 发版
+  const versionType = await select(
+    ['patch', 'minor', 'major'],
+    'Release type ?'
+  )
 
-  print(`[Publish: release] ---------- start release ${versionType} ----------`)
+  print(
+    `[Publish: release] ---------- release ${versionType} start ----------`,
+    color.release
+  )
 
   await execa('yarn', ['standard-version', '--release-as', versionType], stdio)
 
-  print(
-    `[Publish: release] ---------- package.json automatic commit ----------`
-  )
-  print(`[Publish: release] ---------- release end ----------`)
+  print(`[Publish: release] ---------- release end ----------`, color.release)
 
-  print(`[Publish: build] ---------- build start ----------`)
+  // 生成最新一版产物
+  print(`[Publish: build] ---------- build start ----------`, color.build)
 
   await execa('yarn build', stdio)
 
-  print(`[Publish: build] ---------- build end ----------`)
-  print(`[Publish: build commit] ---------- automatic commit start ----------`)
+  print(`[Publish: build] ---------- build end ----------`, color.build)
+
+  // 生成变更日志
+  print(
+    `[Publish: changelog] ---------- changelog generation start ----------`,
+    color.changelog
+  )
+
+  await execa('yarn', 'changelog-all')
+
+  print(
+    `[Publish: changelog] ---------- changelog generated ----------`,
+    color.changelog
+  )
+
+  // 提交 build 产物与 changelog
+  print(
+    `[Publish: auto commit] ---------- automatic commit start ----------`,
+    color.commit
+  )
 
   await execa('git add -A', stdio)
 
   const pkg = require('../package.json')
-  await execa('git', ['commit', '-m', `release: version ${pkg.version}`])
+  await execa('git', ['commit', '-m', `release: version ${pkg.version}`], stdio)
 
-  print(`[Publish: build commit] ---------- automatic commit end ----------`)
+  print(
+    `[Publish: auto commit] ---------- automatic commit end ----------`,
+    color.commit
+  )
+
+  // 决定是否发布到 npm
+  const toNPM = await select(['yes', 'no'], 'Publish to NPM ?', color.main)
+
+  if (toNPM === 'yes') {
+    print(`[Publish: npm] ---------- publish npm start ----------`, color.npm)
+    await execa('yarn push', stdio)
+    print(`[Publish: npm] ---------- publish npm end ----------`, color.npm)
+  }
+
+  print(`[Publish] ---------- publish end ----------`, color.main)
+
+  print('[Publish] ready to push to remote git repo', color.success)
 }
 
 publish()

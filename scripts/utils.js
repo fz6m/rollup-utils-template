@@ -2,8 +2,8 @@ const chalk = require('chalk')
 const inquirer = require('inquirer')
 const log = console.log
 
-const print = (text = '', color = 'green') => {
-  log(chalk[color].bold(text))
+const print = (text = '', color = '#b8d38f') => {
+  log(chalk.hex(color).bold(text))
 }
 
 /**
