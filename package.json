@@ -94,10 +94,10 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "prettier -c --write --parser=typescript \"src/**/*.{ts,tsx}\""
+      "prettier -c --write --parser=typescript"
     ],
     "*.{css,scss,less}": [
-      "stylelint --fix \"src/**/*.{css,scss,less}\""
+      "stylelint --fix"
     ]
   },
   "engines": {
