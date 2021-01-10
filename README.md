@@ -2,9 +2,11 @@
 
 一个用 rollup 构建 工具或功能库 的起始模板，节省初始配置构建环境的时间。
 
+*version: [JavaScript](https://github.com/fz6m/rollup-utils-template)*
+
 *version: TypeScript* 
 
-*version: [JavaScript](https://github.com/fz6m/rollup-utils-template)*
+*version: [Components](https://github.com/fz6m/rollup-utils-template/tree/components)*
 
 本分支构建与 JavaScript 分支的不同：
 
