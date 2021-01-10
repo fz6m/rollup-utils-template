@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "sourceMap": false,
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowJs": false,
+    "strict": true,
+    "strictNullChecks": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["node", "react"],
+    "rootDir": ".",
+    "paths": {
+      "@/*": ["components/*"]
+    },
+    "declaration": true,
+    "declarationDir": "types"
+  },
+  "include": ["components"],
+  "exclude": ["lib", "es"]
+}
