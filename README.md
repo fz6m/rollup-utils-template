@@ -6,13 +6,13 @@
 
 ![Rollop](https://img.shields.io/badge/rollop-2.3-ec4a3f)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Version](https://img.shields.io/badge/version-1.12-orange)
+![Version](https://img.shields.io/badge/version-1.13-orange)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![License](https://img.shields.io/github/license/fz6m/rollup-utils-template)
 
 使用 rollup 构建工具或功能库的起始模板，代码格式规范化，即开即用快速发布，节省初始配置构建环境的时间
 
-*JavaScript* | *[TypeScript](https://github.com/fz6m/rollup-utils-template/tree/typescript)*
+*JavaScript* | *[TypeScript](https://github.com/fz6m/rollup-utils-template/tree/typescript)* | [Components](https://github.com/fz6m/rollup-utils-template/tree/components)
 
 </div>
 
