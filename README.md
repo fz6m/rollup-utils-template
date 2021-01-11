@@ -89,7 +89,6 @@ esm|name.esm.min.js
 `jsx-runtime`|js|提供 jsx 语法使用支持
 `node-sass`|css|支持使用 scss 语法
 `less`|css|支持使用 less 语法
-`emotion`|css|支持使用 style component
 `postcss`|css|支持使用 css module
 `postcss`|css|采用 postcss 处理 css
 `autoprefixer`|css|提供 css 跨浏览器前缀兼容
