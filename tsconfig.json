@@ -12,7 +12,7 @@
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
     "lib": ["dom", "dom.iterable", "esnext"],
     "types": ["node", "react"],
     "rootDir": ".",
