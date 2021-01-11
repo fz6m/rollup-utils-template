@@ -1,3 +1,17 @@
+## [1.0.2](https://github.com/compare/v1.0.1...v1.0.2) (2021-01-11)
+
+
+### Bug Fixes
+
+* generate style import no existent 🌸 ([9a6fd6d](https://github.com/commit/9a6fd6de0f2a155cc8b85a4aad131994b0a01a5b))
+
+
+### Features
+
+* remove style component support 🍑 ([78bdec0](https://github.com/commit/78bdec0c0268ace5d3581994918b6f9e251e2f54))
+
+
+
 ## [1.0.1](https://github.com/compare/25074721a5e15e3c7b9bac60f3861b9a4099f4ef...v1.0.1) (2021-01-10)
 
 
