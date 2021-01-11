@@ -12,4 +12,8 @@ var index = (function (_a) {
   }, "test");
 });
 
-export { index as Button };
+var index$1 = (function () {
+  alert('message');
+});
+
+export { index$1 as Alert, index as Button };

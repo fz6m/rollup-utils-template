@@ -97,6 +97,14 @@ if (ENV !== 'production' && ENV !== 'test' && typeof console !== 'undefined' && 
 
 function generateStyleIndex(d) {
   const content = "import './index.css';"
-  fsp.writeFileSync(`./lib/${d}/style/index.js`, content)
-  fsp.writeFileSync(`./es/${d}/style/index.js`, content)
+  const stylePath = {
+    lib: `./lib/${d}/style`,
+    es: `./es/${d}/style`
+  }
+  const hasStyle = {
+    lib: fsp.existsSync(stylePath.lib),
+    es: fsp.existsSync(stylePath.es)
+  }
+  hasStyle.lib && fsp.writeFileSync(`${stylePath.lib}/index.js`, content)
+  hasStyle.es && fsp.writeFileSync(`${stylePath.es}/index.js`, content)
 }
