@@ -4,11 +4,7 @@ import style from './style.module.scss'
 // css file
 import '@/style.less'
 
-// style component
-import styled from '@emotion/styled'
-const Button = styled.button`
-  color: red;
-`
-
 // jsx
-export default () => <Button className={style.module}>content</Button>
+export default () => <button className={style.module}>content</button>
+
+export const a = 1
