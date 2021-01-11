@@ -1,3 +1,12 @@
+## [1.13.1](https://github.com/compare/v1.13.0...v1.13.1) (2021-01-11)
+
+
+### Features
+
+* remove style-components support 🍑 ([2719364](https://github.com/commit/2719364527470b73fb5a990d9583d51d38b56005))
+
+
+
 # [1.13.0](https://github.com/compare/v1.12.3...v1.13.0) (2021-01-10)
 
 
