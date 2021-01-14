@@ -15,7 +15,7 @@
     "jsx": "react",
     "lib": ["dom", "dom.iterable", "esnext"],
     "types": ["node", "react"],
-    "rootDir": ".",
+    "rootDir": "./src",
     "paths": {
       "@/*": ["src/*"]
     },

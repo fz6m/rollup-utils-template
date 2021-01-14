@@ -9,7 +9,7 @@
   "unpkg": "dist/bundle.min.js",
   "jsdelivr": "dist/bundle.min.js",
   "homepage": "https://github.com",
-  "types": "types/src/index.d.ts",
+  "types": "types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com"
