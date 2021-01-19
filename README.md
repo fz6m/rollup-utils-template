@@ -12,7 +12,7 @@
 
 使用 rollup 构建工具或功能库的起始模板，代码格式规范化，即开即用快速发布，节省初始配置构建环境的时间
 
-*JavaScript* | *[TypeScript](https://github.com/fz6m/rollup-utils-template/tree/typescript)* | [Components](https://github.com/fz6m/rollup-utils-template/tree/components)
+*JavaScript* | *[TypeScript](https://github.com/fz6m/rollup-utils-template/tree/typescript)* | *[Components](https://github.com/fz6m/rollup-utils-template/tree/components)*
 
 </div>
 
