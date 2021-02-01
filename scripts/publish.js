@@ -11,7 +11,8 @@ const color = {
   changelog: '#ffe647', // 马卡龙可可凤梨
   commit: '#cf8878', // 杏仁饼，果仁糖，巧克力
   npm: '#f1707d', // 马卡龙草莓奶霜
-  success: '#ff4500' // 橙红色
+  success: '#ff4500', // 橙红色
+  fail: '#FF0000' // 纯红
 }
 
 const publish = async () => {
@@ -45,12 +46,19 @@ const publish = async () => {
     color.changelog
   )
 
-  await execa('yarn changelog-all')
+  try {
+    await execa('yarn changelog-all')
 
-  print(
-    `[Publish: changelog] ---------- changelog generated ----------`,
-    color.changelog
-  )
+    print(
+      `[Publish: changelog] ---------- changelog generated ----------`,
+      color.changelog
+    )
+  } catch {
+    print(
+      `[Publish: changelog] ---------- changelog generation failed. Have you git commit ? ----------`,
+      color.fail
+    )
+  }
 
   // 提交 build 产物与 changelog
   print(
