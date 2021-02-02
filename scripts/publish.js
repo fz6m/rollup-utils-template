@@ -36,7 +36,7 @@ const publish = async () => {
   // 生成最新一版产物
   print(`[Publish: build] ---------- build start ----------`, color.build)
 
-  await execa('yarn build', stdio)
+  await execa('yarn', ['build'], stdio)
 
   print(`[Publish: build] ---------- build end ----------`, color.build)
 
@@ -47,7 +47,7 @@ const publish = async () => {
   )
 
   try {
-    await execa('yarn changelog-all')
+    await execa('yarn', ['changelog-all'], stdio)
 
     print(
       `[Publish: changelog] ---------- changelog generated ----------`,
@@ -66,7 +66,7 @@ const publish = async () => {
     color.commit
   )
 
-  await execa('git add -A', stdio)
+  await execa('git', ['add', '-A'], stdio)
 
   const pkg = require('../package.json')
   await execa('git', ['commit', '-m', `release: version ${pkg.version}`], stdio)
@@ -81,7 +81,7 @@ const publish = async () => {
 
   if (toNPM === 'yes') {
     print(`[Publish: npm] ---------- publish npm start ----------`, color.npm)
-    await execa('yarn push', stdio)
+    await execa('yarn', ['push'], stdio)
     print(`[Publish: npm] ---------- publish npm end ----------`, color.npm)
   }
 
