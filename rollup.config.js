@@ -3,6 +3,7 @@ import babel from '@rollup/plugin-babel'
 import alias from '@rollup/plugin-alias'
 import replace from '@rollup/plugin-replace'
 import json from '@rollup/plugin-json'
+import image from '@rollup/plugin-image'
 
 // https://github.com/saf33r/rollup-plugin-cleaner
 import cleaner from 'rollup-plugin-cleaner'
@@ -51,6 +52,7 @@ const configGenerator = (chunk) => {
       output: format,
       plugins: [
         cleanPlugin,
+        image(),
         json(),
         commonjs(),
         alias({
