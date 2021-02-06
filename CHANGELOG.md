@@ -1,3 +1,12 @@
+## [1.0.6](https://github.com/compare/v1.0.5...v1.0.6) (2021-02-06)
+
+
+### Features
+
+* add inline image support 🍚 ([e9cf1ea](https://github.com/commit/e9cf1ea25ca6a5e94f3d7191fcec6f5ff51718c7))
+
+
+
 ## [1.0.5](https://github.com/compare/v1.0.4...v1.0.5) (2021-02-02)
 
 
