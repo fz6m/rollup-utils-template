@@ -22,6 +22,14 @@ const _ = require('lodash')
 
 const isDev = process.env.NODE_ENV === 'development'
 
+const extensions = ['.js', '.jsx', '.ts', '.tsx', '.json']
+
+const cssModulesConfig = isDev
+  ? true
+  : {
+      generateScopedName: '[hash:base64:5]'
+    }
+
 const umdFileName = pkg['umd:main']
 const filename = umdFileName.slice(
   umdFileName.indexOf('/') + 1,
@@ -61,7 +69,10 @@ const configGenerator = (module, index) => ({
         })
       : null,
     json(),
-    module.format !== 'esm' ? nodeResolve() : null,
+    nodeResolve({
+      mainFields: ['module', 'main', 'jsnext:main', 'browser'],
+      extensions
+    }),
     commonjs(),
     alias({
       entries: [{ find: '@', replacement: resolve('src') }]
@@ -76,7 +87,8 @@ const configGenerator = (module, index) => ({
       extract:
         process.env.CSS_STATUS === 'inline'
           ? false
-          : resolve(`dist/css/${filename}.css`)
+          : resolve(`dist/css/${filename}.css`),
+      modules: cssModulesConfig
     })
   ].filter(Boolean)
 })
